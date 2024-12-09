@@ -1,5 +1,4 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import mongoose, { HydratedDocument } from 'mongoose';
+import mongoose from 'mongoose';
 
 export const BookSchema = new mongoose.Schema({
   name: { type: String, require: true },
