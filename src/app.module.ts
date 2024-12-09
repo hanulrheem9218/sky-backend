@@ -6,7 +6,6 @@ import { Mongoose } from 'mongoose';
 import { BookSchema } from './schemas/book.schema';
 import { BookModule } from './book/book.module';
 import { ConfigModule } from '@nestjs/config';
-import { AppConfigService } from './app.config.service';
 
 @Module({
   imports: [
@@ -17,6 +16,6 @@ import { AppConfigService } from './app.config.service';
     }),
   ],
   controllers: [AppController],
-  providers: [AppService, AppConfigService],
+  providers: [AppService],
 })
 export class AppModule {}
