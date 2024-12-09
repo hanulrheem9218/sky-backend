@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateBookDto } from './dto/create-bok.dto';
-import { Book } from 'src/schema/book.schema';
+import { Book } from 'src/book/schema/book.schema';
 
 @Injectable()
 export class BooksService {
