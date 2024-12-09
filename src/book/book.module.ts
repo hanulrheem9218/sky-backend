@@ -1,4 +1,4 @@
-import { Controller, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { BookSchema } from 'src/schemas/book.schema';
 import { BooksService as BookService } from './book.service';
