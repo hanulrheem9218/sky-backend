@@ -8,7 +8,6 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    BookModule,
     MongooseModule.forRoot(process.env.MONGO_URL, {
       dbName: process.env.MONGO_DB_NAME,
     }),
