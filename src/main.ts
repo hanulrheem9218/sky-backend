@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 
-export async function bootstrap() {
+async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors({
@@ -11,6 +11,12 @@ export async function bootstrap() {
     credentials: true,
     allowedHeaders: 'Content-Type, Authroization',
   });
-  await app.listen(process.env.PORT);
+  return await app;
 }
-bootstrap();
+
+// Default export for Vercel to use
+export default async (req: Request, res: Response) => {
+  const app = await bootstrap(); // Create the app instance
+  const instance = app.getHttpAdapter().getInstance(); // Get the express instance
+  return instance(req, res); // Handle the request using the Express instance
+};
