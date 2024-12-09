@@ -8,9 +8,12 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    MongooseModule.forRoot(process.env.MONGO_URL, {
-      dbName: process.env.MONGO_DB_NAME,
-    }),
+    MongooseModule.forRoot(
+      'mongodb+srv://rheemhanul:LkmKPeKY5mt2lNNO@dotnet-practice.nt58x.mongodb.net/?retryWrites=true&w=majority&appName=dotnet-practice',
+      {
+        dbName: 'nest_store',
+      },
+    ),
   ],
   controllers: [AppController],
   providers: [AppService],
