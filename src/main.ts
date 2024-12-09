@@ -12,11 +12,3 @@ async function bootstrap() {
   await app.listen(process.env.PORT);
 }
 bootstrap();
-//for vercel
-export const handler = async (req, res) => {
-  const app = await NestFactory.create(AppModule);
-  app.enableCors();
-
-  const response = await app.getHttpAdapter().getInstance().handle(req, res);
-  return response;
-};
