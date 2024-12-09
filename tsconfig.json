@@ -11,7 +11,7 @@
     "outDir": "./dist",
     "baseUrl": "./src",
     "paths": {
-      "@appModule": ["app.module"]
+      "@appModule": ["app.module.ts"]
     },
     "incremental": true,
     "skipLibCheck": true,
