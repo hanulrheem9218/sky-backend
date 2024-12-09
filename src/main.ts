@@ -9,12 +9,6 @@ async function bootstrap() {
     credentials: true,
     allowedHeaders: 'Content-Type, Authroization',
   });
-  return app;
+  await app.listen(process.env.PORT ?? 5000);
 }
-
-// Default export for Vercel to use
-export default async (req: Request, res: Response) => {
-  const app = await bootstrap(); // Create the app instance
-  const instance = app.getHttpAdapter().getInstance(); // Get the express instance
-  return instance(req, res); // Handle the request using the Express instance
-};
+bootstrap();
