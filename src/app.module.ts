@@ -9,7 +9,7 @@ import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
+    ConfigModule.forRoot({ isGlobal: true, envFilePath: './.env' }),
     BookModule,
     MongooseModule.forRoot(process.env.MONGO_URL, {
       dbName: process.env.DB_NAME,
